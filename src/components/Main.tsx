@@ -62,7 +62,7 @@ const Main = () => {
                 {/* <Toggle title="Save Settings" icon={SaveSettingsIcon} /> */}
             </div>
 
-            <div className="max-md:flex-col  flex md:px-10 gap-4 mt-10">
+            <div className="max-md:flex-col  flex gap-4 mt-10">
                 <label className=" border-2 border-purple-300 p-4 rounded-lg grow flex gap-4 bg-gradient-to-br from-sky-200 via-teal-100 via-10% to-purple-600">
                     <span className="font-bold lg:text-xl text-gray-600">Password Length</span>
                     <input className="font-bold w-fit text-center" type="number" value={length} max={20} min={5} onChange={({ target }) => setLength(+target.value)} />
