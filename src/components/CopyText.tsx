@@ -31,7 +31,7 @@ function CopyText({ copyText }: { copyText: string }) {
     }
 
     return (
-        <div className="flex md:px-10 mt-10">
+        <div className="flex mt-10">
             <input
                 type="text"
                 name="text"
