@@ -281,8 +281,8 @@ const Main = () => {
                 <h2 className="font-bold mb-10">
                     Here’s an in-depth look at each of the 50 ways to enhance the security of your passwords, ensuring a detailed understanding of why and how each method contributes to a safer online experience.
                 </h2>
-                <ul className="list list-decimal space-y-4">
-                    {bullets.map(({ bold, text }: any, index: number) => (
+                <ul className="list list-decimal list-inside space-y-4">
+                    {bullets.map(({ bold, text }: { bold: string, text: string }, index: number) => (
                         <li key={index}>
                             <span className="font-bold">{bold}</span>{' '}<span>{text}</span>
                         </li>
