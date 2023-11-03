@@ -1,12 +1,10 @@
 import { useState } from "react"
 import Button from "./Button"
-// import Toggle from "./ToggleOld"
-import Toggle from "./Toggle"
 import AaIcon from "./AaIcon"
-import NumbersIcon from "./NumbersIcon"
 import CharactersIcon from "./CharactersIcon"
 import CopyText from "./CopyText"
-import SaveSettingsIcon from "./SaveSettingsIcon"
+import NumbersIcon from "./NumbersIcon"
+import Toggle from "./Toggle"
 
 const bullets = [
     {
@@ -250,6 +248,19 @@ const Main = () => {
         }
         setPassword(generatedPassword)
     }
+
+
+    const handleSetLength = ({ target }: InputEvent) => {
+        const newNum = +target.value
+        if (newNum > 20) {
+            setLength(20)
+        } else if (newNum < 5) {
+            setLength(5)
+        } else {
+            setLength(newNum)
+        }
+    }
+
     return (
         <main
             className="bg-slate-100 p-16 mx-auto rounded-lg max-w-[calc(100%-2rem)] w-[800px] lg:p-8 shadow-lg h-full"
@@ -268,7 +279,7 @@ const Main = () => {
             <div className="max-md:flex-col  flex gap-4 mt-10">
                 <label className=" border-2 border-purple-300 p-4 rounded-lg grow flex gap-4 bg-gradient-to-br from-sky-200 via-teal-100 via-10% to-purple-600">
                     <span className="font-bold lg:text-xl text-gray-600">Password Length</span>
-                    <input className="font-bold w-fit text-center" type="number" value={length} max={20} min={5} onChange={({ target }) => setLength(+target.value)} />
+                    <input className="font-bold w-fit text-center" type="number" value={length} max={20} min={5} onChange={handleSetLength} />
                 </label>
                 {hasNumbers}
                 <Button className="grow max-md:w-full max-md:text-sm max-md:h-[53px]" onClick={generatePassword}>Generate</Button>
