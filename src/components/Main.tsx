@@ -250,8 +250,9 @@ const Main = () => {
     }
 
 
-    const handleSetLength = ({ target }: InputEvent) => {
-        const newNum = +target.value
+    const handleSetLength = ({ target }: any) => {
+        if (!target) return
+        const newNum = +target?.value
         if (newNum > 20) {
             setLength(20)
         } else if (newNum < 5) {
@@ -262,9 +263,7 @@ const Main = () => {
     }
 
     return (
-        <main
-            className="bg-slate-100 p-16 mx-auto rounded-lg max-w-[calc(100%-2rem)] w-[800px] lg:p-8 shadow-lg h-full"
-        >
+        <main className="bg-slate-100 p-16 mx-auto rounded-lg max-w-[calc(100%-2rem)] w-[800px] lg:p-8 shadow-lg h-full">
             <header className="mb-20">
                 <div className="font-logo text-3xl bg-clip-text text-transparent bg-gradient-to-br from-black via-purple-400 to-black">BESTPASSGEN</div>
             </header>
