@@ -224,7 +224,7 @@ const Main = () => {
     const ALPHA_LOWER = 'abcdeghijklmnopqrstuvwxyz'
     const ALPHA_UPPER = 'ABCDEGHIJKLMNOPQRSTUVWXYZ'
 
-    const generatePassword = (e:FormEvent) => {
+    const generatePassword = (e: FormEvent) => {
         e.preventDefault()
         let randomString = ''
         if (hasNumbers) {
@@ -281,16 +281,16 @@ const Main = () => {
                 {/* <Toggle title="Save Settings" icon={SaveSettingsIcon} /> */}
             </div>
 
-        <form onSubmit={generatePassword}>
-            <div className="max-md:flex-col flex gap-4 mt-10">
-                <label className=" border-2 border-purple-300 p-4 rounded-lg grow flex gap-4 bg-gradient-to-br from-sky-200 via-teal-100 via-10% to-purple-600">
-                    <span className="font-bold lg:text-xl text-gray-600">Password Length</span>
-                    <input className="font-bold w-fit text-center" type="number" value={length} max={20} min={5} onChange={handleSetLength} />
-                </label>
-                {hasNumbers}
-                <Button className="grow max-md:w-full max-md:text-sm max-md:h-[53px]">Generate</Button>
-            </div>
-        </form>
+            <form onSubmit={generatePassword}>
+                <div className="max-md:flex-col flex gap-4 mt-10">
+                    <label className=" items-end border-2 border-purple-300 p-4 rounded-lg grow flex gap-4 bg-gradient-to-br from-sky-200 via-teal-100 via-10% to-purple-600">
+                        <span className="font-bold lg:text-xl text-sm text-gray-600">Password Length</span>
+                        <input className="font-bold w-fit text-center" type="number" value={length} max={20} min={5} onChange={handleSetLength} />
+                    </label>
+                    {hasNumbers}
+                    <Button className="grow max-md:w-full max-md:text-sm max-md:h-[53px]">Generate</Button>
+                </div>
+            </form>
             <div>
                 <CopyText copyText={password} />
             </div>
